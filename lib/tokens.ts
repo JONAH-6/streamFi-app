@@ -74,3 +74,12 @@ export function tokenByAddress(address: string, network: 'mainnet' | 'testnet' |
 export function tokenBySymbol(symbol: string, network: 'mainnet' | 'testnet' | 'local'): TokenMeta | undefined {
   return getTokens(network).find(t => t.symbol === symbol);
 }
+
+/**
+ * Resolve a token's logo URL by symbol. Each symbol maps to its own logo, so
+ * USDC never falls back to (or is confused with) another asset's icon such as
+ * USDT (issue #142). Returns a neutral placeholder when the symbol is unknown.
+ */
+export function tokenLogoUrl(symbol: string, network: 'mainnet' | 'testnet' | 'local' = 'testnet'): string {
+  return tokenBySymbol(symbol, network)?.logoUrl ?? '/tokens/generic.svg';
+}
