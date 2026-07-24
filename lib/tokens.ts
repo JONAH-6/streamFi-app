@@ -21,12 +21,15 @@ export const TOKENS_TESTNET: TokenMeta[] = [
     decimals: 7,
     // Native XLM is accessed via the Stellar Asset Contract (SAC)
     address:  'CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC',
+    logoUrl:  '/tokens/xlm.svg',
   },
   {
     symbol:   'USDC',
     name:     'USD Coin',
     decimals: 7,
     address:  'CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA',
+    // Circle's USDC logo — NOT the Tether (USDT) icon (issue #142).
+    logoUrl:  '/tokens/usdc.svg',
   },
   {
     symbol:   'EURC',
@@ -39,6 +42,7 @@ export const TOKENS_TESTNET: TokenMeta[] = [
     // previous value here was USDC's issuer G-address (not even a contract
     // address) pasted in by mistake.
     address:  'CCUUDM434BMZMYWYDITHFXHDMIVTGGD6T2I5UKNX5BSLXLW7HVR4MCGZ',
+    logoUrl:  '/tokens/eurc.svg',
   },
 ];
 
@@ -48,12 +52,14 @@ export const TOKENS_MAINNET: TokenMeta[] = [
     name:     'Stellar Lumens',
     decimals: 7,
     address:  'CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA',
+    logoUrl:  '/tokens/xlm.svg',
   },
   {
     symbol:   'USDC',
     name:     'USD Coin',
     decimals: 7,
     address:  'CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75',
+    logoUrl:  '/tokens/usdc.svg',
   },
 ];
 
