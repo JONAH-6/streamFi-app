@@ -9,7 +9,7 @@ import { ArrowRight, Info } from 'lucide-react';
 import { useWallet }        from '@/contexts/WalletContext';
 import { createStream }     from '@/lib/factory';
 import { toStroops }        from '@/lib/format';
-import { TOKENS_TESTNET }   from '@/lib/tokens';
+import { TOKENS_TESTNET, tokenLogoUrl } from '@/lib/tokens';
 import { CopyHashButton }   from '@/components/ui/CopyHashButton';
 import { useDebounce }      from '@/hooks/useDebounce';
 
@@ -166,11 +166,21 @@ export default function CreatePage() {
         {/* Token */}
         <div>
           <label className="block text-xs font-semibold mb-1 dark:text-white">Token</label>
-          <select {...register('token')} className="input">
-            {TOKENS_TESTNET.map(t => (
-              <option key={t.symbol} value={t.symbol}>{t.symbol} — {t.name}</option>
-            ))}
-          </select>
+          <div className="relative flex items-center gap-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={tokenLogoUrl(token, 'testnet')}
+              alt={`${token} logo`}
+              width={20}
+              height={20}
+              className="w-5 h-5 rounded-full shrink-0"
+            />
+            <select {...register('token')} className="input flex-1">
+              {TOKENS_TESTNET.map(t => (
+                <option key={t.symbol} value={t.symbol}>{t.symbol} — {t.name}</option>
+              ))}
+            </select>
+          </div>
         </div>
 
         {/* Deposit */}
